@@ -2,8 +2,8 @@
 
 This project is part of the Front-End Developer Internship Assignment at Fyle and is deployed on Vercel.
 
-- **GitHub Repository:** [Fyle Health Challenge Tracker](https://github.com/knight7080/fyle-health-challenge-tracker.git)
-- **Live Demo:** [Vercel Deployment](https://fyle-health-challenge-tracker.vercel.app/)
+- **GitHub Repository:** [Fyle Health Challenge Tracker](https://github.com/ishitaraina1807/Health-challenge-tracker)
+- **Live Demo:** [Vercel Deployment]()
 
 ## Features
 - **Add Workouts:** Click the `+ Add Workout` button to open a modal and log your workout.
@@ -12,9 +12,9 @@ This project is part of the Front-End Developer Internship Assignment at Fyle an
 - **Fully Functional:** Works flawlessly both locally and on Vercel.
 
 ## Project Preview
-![Workout Tracker](https://github.com/user-attachments/assets/453f46cd-d9c7-4fdc-bf3a-1cd14d74bd46)
-![Add Workout Modal](https://github.com/user-attachments/assets/46473cea-081e-4081-b4f5-d4455be84694)
-![Workout Progress Charts](https://github.com/user-attachments/assets/56a74c65-3849-4e56-91c3-8ae5577bcb57)
+![Workout Tracker](https://github.com/ishitaraina1807/Health-challenge-tracker/blob/main/Screenshot%202025-02-01%20153955.png)
+![Add Workout Modal](https://github.com/ishitaraina1807/Health-challenge-tracker/blob/main/Screenshot%202025-02-01%20153942.png)
+![Workout Progress Charts](https://github.com/ishitaraina1807/Health-challenge-tracker/blob/main/Screenshot%202025-02-01%20154013.png)
 
 ## Installation Guide
 Follow these steps to set up the project locally:
