@@ -1,0 +1,46 @@
+<div class="p-10">
+  <div class="overflow-x-auto">
+    <table mat-table [dataSource]="paginatedData" class="custom-table mat-elevation-z4">
+      
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="workouts">
+        <th mat-header-cell *matHeaderCellDef> Workouts </th>
+        <td mat-cell *matCellDef="let element"> 
+          <span class="">{{ transformWorkouts(element.workouts) }}</span>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="numberOfWorkouts">
+        <th mat-header-cell *matHeaderCellDef> Total Workouts </th>
+        <td mat-cell *matCellDef="let element"> {{ element.workouts.length }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalWorkoutMinutes">
+        <th mat-header-cell *matHeaderCellDef> Total Minutes </th>
+        <td mat-cell *matCellDef="let element"> 
+          <span>{{ transformMinutes(element.workouts) }} min</span> 
+        </td>
+      </ng-container>
+
+      <!-- Header and Row Definitions -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="data-row"></tr>
+    
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="p-6 flex justify-center">
+    <mat-paginator
+      [length]="totalItems"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[5, 10, 20]"
+      (page)="handlePageEvent($event)"
+      showFirstLastButtons>
+    </mat-paginator>
+  </div>
+</div>

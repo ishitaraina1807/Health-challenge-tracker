@@ -1,0 +1,15 @@
+/* Example for adding some global improvements to form styling */
+.mat-form-field {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+  
+  button.mat-raised-button {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  button.mat-raised-button:hover {
+    background-color: #303f9f;
+  }
+  

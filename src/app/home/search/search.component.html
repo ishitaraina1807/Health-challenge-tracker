@@ -1,0 +1,45 @@
+<form class="flex flex-col lg:flex-row items-center justify-between p-6 gap-6 bg-white rounded-lg shadow-sm" [formGroup]="searchGroup" (ngSubmit)="submitForm()">
+    <!-- Search Input Field -->
+    <mat-form-field  class="w-full lg:w-[40%]">
+      <mat-label>Search User</mat-label>
+      <input
+        matInput
+        placeholder="Enter keywords..."
+        formControlName="search_field"
+        class="rounded"
+      />
+      <mat-icon matPrefix class="mr-2 text-gray-500">search</mat-icon>
+      <button 
+        *ngIf="searchGroup.get('search_field')?.value"
+        matSuffix 
+        mat-icon-button 
+        aria-label="Clear" 
+        (click)="clearSearch()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="searchGroup.get('search_field')?.invalid && searchGroup.get('search_field')?.touched">
+        Please enter a valid search query
+      </mat-error>
+    </mat-form-field>
+  
+    <mat-form-field  class="w-full lg:w-[40%]">
+      <mat-label>Workout Type</mat-label>
+      <mat-select formControlName="filter_field">
+        <mat-option *ngFor="let workout of options" [value]="workout.value">
+          <span class="flex items-center">
+            {{ workout.label }}
+          </span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <button
+      mat-raised-button
+      color="primary"
+      class="w-full lg:w-auto px-6 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+      (click)="addWorkout()"
+    >
+      <mat-icon class="mr-2">add_circle</mat-icon>
+      Add Workout
+    </button>
+  </form>

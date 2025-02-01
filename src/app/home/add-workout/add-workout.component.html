@@ -1,0 +1,54 @@
+<form 
+  class="flex flex-col w-full max-w-lg mx-auto bg-white p-8 rounded-3xl shadow-lg space-y-6"
+  [formGroup]="addWorkoutGroup"
+  (ngSubmit)="addWorkout()"
+>
+
+  <mat-form-field class="w-full" floatLabel="always">
+    <mat-label>User Name</mat-label>
+    <input 
+      matInput 
+      placeholder="Enter your name"  
+      formControlName="user_name"
+      required
+      class="h-12 text-lg"
+    />
+    <mat-error *ngIf="addWorkoutGroup.get('user_name')?.invalid">User Name is required</mat-error>
+  </mat-form-field>
+
+  <div class="grid grid-cols-2 gap-6">
+
+    <mat-form-field class="w-full" floatLabel="always">
+      <mat-label>Workout Type</mat-label>
+      <mat-select formControlName="filter_field" required>
+        <mat-option *ngFor="let workout of workoutTypes" [value]="workout">{{ workout }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="addWorkoutGroup.get('filter_field')?.invalid">Workout type is required</mat-error>      
+    </mat-form-field>
+
+    <mat-form-field class="w-full" floatLabel="always">
+      <mat-label>Workout Minutes</mat-label>
+      <input 
+        matInput 
+        placeholder="Enter minutes" 
+        type="number"
+        formControlName="total_time"
+        required
+        class="h-12 text-lg"
+      />
+      <mat-error *ngIf="addWorkoutGroup.get('total_time')?.hasError('required')">Workout minutes are required</mat-error>
+      <mat-error *ngIf="addWorkoutGroup.get('total_time')?.hasError('min')">Minutes must be at least 1</mat-error>
+    </mat-form-field>
+
+  </div>
+
+  <button 
+    mat-raised-button 
+    color="primary" 
+    class="w-full py-4 rounded-xl text-lg font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:bg-blue-700 active:scale-95"
+    [disabled]="addWorkoutGroup.invalid"
+  >
+    + Add Workout
+  </button>
+
+</form>

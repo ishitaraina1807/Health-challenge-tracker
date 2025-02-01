@@ -1,0 +1,37 @@
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .header-row {
+    background: #2488f3;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .data-row:nth-child(even) {
+    background: #f9f9f9;
+  }
+  
+  .data-row:hover {
+    background: #e0eaf2;
+    transition: background 0.3s;
+  }
+  
+  .mat-header-cell, .mat-cell {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .p-6 {
+    padding: 24px;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+  

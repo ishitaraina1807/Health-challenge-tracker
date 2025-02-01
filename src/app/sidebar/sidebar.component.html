@@ -1,0 +1,30 @@
+<div class="flex flex-col justify-center bg-blue-50 w-[80px] h-full border-r border-blue-100">
+    <div class="flex flex-col space-y-2 p-3">
+        
+        <div class="group relative">
+            <button matTooltip="Users" 
+                    matTooltipPosition="right" 
+                    (click)="navigate('')"
+                    class="w-full h-14 rounded-xl bg-white hover:bg-blue-500 transition-all duration-300 flex items-center justify-center hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M3 9.5L12 3l9 6.5V21H3V9.5z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M9 21V12h6v9" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="group relative">
+            <button matTooltip="Workout Progress" 
+                    matTooltipPosition="right" 
+                    (click)="navigate('progress')"
+                    class="w-full h-14 rounded-xl bg-white hover:bg-blue-500 transition-all duration-300 flex items-center justify-center hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" 
+                          d="M4 18v-3m4 3V9m4 9V6m4 12v-7m4 7v-5" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>

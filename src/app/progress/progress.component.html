@@ -1,0 +1,4 @@
+<div class="flex flex-row bg-gray-100 h-[85vh] p-10 justify-between">
+    <app-user-list class="flex-shrink-0 overflow-auto" (selectedUser)="selectedUser=$event"></app-user-list>
+    <app-user-charts class="flex-grow ml-10" [selectedUser]="selectedUser"></app-user-charts>
+</div>
