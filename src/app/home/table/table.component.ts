@@ -74,16 +74,7 @@ export class TableComponent {
 
   updatePaginatedData() {
     this.totalItems = this.tableData.length;
-
-    if (this.currentPage * this.pageSize >= this.totalItems) {
-      this.currentPage = Math.max(0, Math.ceil(this.totalItems / this.pageSize) - 1);
-    }
-
     this.paginatedData = this.paginateData(this.tableData, this.currentPage, this.pageSize);
-
-    if (this.paginator) {
-      this.paginator.pageIndex = this.currentPage;
-    }
   }
 
   paginateData(data: any[], pageIndex: number, pageSize: number) {

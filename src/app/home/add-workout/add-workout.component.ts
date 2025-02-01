@@ -54,13 +54,13 @@ export class AddWorkoutComponent {
     );
 
     if (existingUser) {
-
+      // Add workout to existing user
       existingUser.workouts.push({
         type: workoutType,
         minutes: workoutMinutes
       });
     } else {
-
+      // Create new user with workout
       const newWorkout = {
         id: this.tableData.length + 1,
         name: name,
@@ -72,7 +72,7 @@ export class AddWorkoutComponent {
       this.tableData.push(newWorkout);
     }
 
-
+    // Update localStorage and service
     localStorage.setItem('userData', JSON.stringify(this.tableData));
     this.workoutService.updateWorkout(this.tableData);
     this.dialog.closeAll();
