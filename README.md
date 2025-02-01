@@ -3,7 +3,7 @@
 This project is part of the Front-End Developer Internship Assignment at Fyle and is deployed on Vercel.
 
 - **GitHub Repository:** [Fyle Health Challenge Tracker](https://github.com/ishitaraina1807/Health-challenge-tracker)
-- **Live Demo:** [Vercel Deployment]()
+- **Live Demo:** [Vercel Deployment](https://health-challenge-tracker-eight.vercel.app/)
 
 ## Features
 - **Add Workouts:** Click the `+ Add Workout` button to open a modal and log your workout.
