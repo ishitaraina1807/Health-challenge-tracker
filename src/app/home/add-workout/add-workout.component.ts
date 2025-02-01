@@ -9,7 +9,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon'; 
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'app-add-workout',
   standalone: true,
@@ -17,24 +16,22 @@ import { CommonModule } from '@angular/common';
   templateUrl: './add-workout.component.html',
   styleUrl: './add-workout.component.css'
 })
-
 export class AddWorkoutComponent {
-  // ngOnInit() {
-  //   console.log("Workout Types:", this.workoutTypes);
-  // }
-
   workoutTypes: string[] = ['Running', 'Cycling', 'Swimming', 'Yoga', 'Calisthenics'];
 
-  constructor(private workoutService : UpdateWorkoutServices, private dialog : MatDialog){}
+  constructor(private workoutService: UpdateWorkoutServices, private dialog: MatDialog) {
+    // Initialize tableData safely
+    const storedData = localStorage.getItem('userData');
+    this.tableData = storedData ? JSON.parse(storedData) : [];
+  }
 
   addWorkoutGroup = new FormGroup({
-    user_name: new FormControl('', Validators.required),
+    name: new FormControl('', Validators.required),
     filter_field: new FormControl('', Validators.required), 
     total_time: new FormControl('', [Validators.required, Validators.min(1)])
   });
-  
 
-  tableData = JSON.parse(localStorage.getItem('userData')!);
+  tableData: any[] = [];
 
   addWorkout() {
     if (this.addWorkoutGroup.invalid) {
@@ -42,20 +39,43 @@ export class AddWorkoutComponent {
       return;
     }
 
-    const newWorkout = {
-      id: this.tableData.length + 1,
-      name: this.addWorkoutGroup.get('user_name')?.value,
-      workouts: [{
-        type: this.addWorkoutGroup.get('filter_field')?.value,
-        minutes: this.addWorkoutGroup.get('total_time')?.value,
-      }]
-    };
+    const name = this.addWorkoutGroup.get('name')?.value?.trim();
+    const workoutType = this.addWorkoutGroup.get('filter_field')?.value;
+    const workoutMinutes = Number(this.addWorkoutGroup.get('total_time')?.value);
 
-    this.tableData.push(newWorkout);
-    localStorage.setItem("userData", JSON.stringify(this.tableData));
+    if (!name) {
+      alert("Name is required");
+      return;
+    }
+
+    // Find existing user (case-insensitive comparison)
+    const existingUser = this.tableData.find(
+      user => user.name.toLowerCase() === name.toLowerCase()
+    );
+
+    if (existingUser) {
+
+      existingUser.workouts.push({
+        type: workoutType,
+        minutes: workoutMinutes
+      });
+    } else {
+
+      const newWorkout = {
+        id: this.tableData.length + 1,
+        name: name,
+        workouts: [{
+          type: workoutType,
+          minutes: workoutMinutes
+        }]
+      };
+      this.tableData.push(newWorkout);
+    }
+
+
+    localStorage.setItem('userData', JSON.stringify(this.tableData));
     this.workoutService.updateWorkout(this.tableData);
     this.dialog.closeAll();
-
-    this.addWorkoutGroup.reset(); 
+    this.addWorkoutGroup.reset();
   }
 }
