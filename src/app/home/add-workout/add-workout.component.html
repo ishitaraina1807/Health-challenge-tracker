@@ -3,21 +3,19 @@
   [formGroup]="addWorkoutGroup"
   (ngSubmit)="addWorkout()"
 >
-
   <mat-form-field class="w-full" floatLabel="always">
-    <mat-label>User Name</mat-label>
+    <mat-label>Name</mat-label>
     <input 
       matInput 
       placeholder="Enter your name"  
-      formControlName="user_name"
+      formControlName="name"
       required
       class="h-12 text-lg"
     />
-    <mat-error *ngIf="addWorkoutGroup.get('user_name')?.invalid">User Name is required</mat-error>
+    <mat-error *ngIf="addWorkoutGroup.get('name')?.invalid">Name is required</mat-error>
   </mat-form-field>
 
   <div class="grid grid-cols-2 gap-6">
-
     <mat-form-field class="w-full" floatLabel="always">
       <mat-label>Workout Type</mat-label>
       <mat-select formControlName="filter_field" required>
@@ -39,7 +37,6 @@
       <mat-error *ngIf="addWorkoutGroup.get('total_time')?.hasError('required')">Workout minutes are required</mat-error>
       <mat-error *ngIf="addWorkoutGroup.get('total_time')?.hasError('min')">Minutes must be at least 1</mat-error>
     </mat-form-field>
-
   </div>
 
   <button 
@@ -50,5 +47,4 @@
   >
     + Add Workout
   </button>
-
 </form>
