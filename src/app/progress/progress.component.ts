@@ -3,6 +3,7 @@ import { UserListComponent } from "./user-list/user-list.component";
 import { UserChartsComponent } from "./user-charts/user-charts.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Workout } from '../services/updateWorkoutServices/updateWorkoutService';
 
 @Component({
   selector: 'app-progress',
@@ -12,5 +13,5 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './progress.component.css'
 })
 export class ProgressComponent {
-  selectedUser! : {id: number;name: string;workouts: []};
+  selectedUser! : {id: number;name: string;workouts: Workout[]};
 }
