@@ -43,7 +43,6 @@ To check the code coverage, run:
 ng test --code-coverage
 ```
 
-### Coverage Report
 Unit tests are included for:
 - **Component:** `user-charts.component.ts`
 - **Service:** `update-workout.service.spec.ts`
