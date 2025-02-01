@@ -48,10 +48,6 @@ Unit tests are included for:
 - **Component:** `user-charts.component.ts`
 - **Service:** `update-workout.service.spec.ts`
 
-![Code Coverage Report](https://github.com/user-attachments/assets/1073f2d9-4840-475b-8143-086023bac696)
-![Unit Test Results](https://github.com/user-attachments/assets/10452dfc-6975-49c4-85a6-938ec55d4559)
-![Coverage Summary](https://github.com/user-attachments/assets/a8ba3527-97e9-44fd-a828-94e03c731aa6)
-
 ---
 
 The project meets all requirements, ensuring a smooth and reliable user experience.
