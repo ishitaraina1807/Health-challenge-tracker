@@ -7,7 +7,7 @@ This project is part of the Front-End Developer Internship Assignment at Fyle an
 
 ## Features
 - **Add Workouts:** Click the `+ Add Workout` button to open a modal and log your workout.
-- **Workout Progress Charts:** View workout trends using charts accessible via the `show_chart` icon in the left toolbar.
+- **Workout Progress Charts:** View workout trends using charts accessible via the `show_chart` icon in the left sidebar.
 - **Persistent Data:** Workouts are stored in local storage for seamless usage.
 - **Fully Functional:** Works flawlessly both locally and on Vercel.
 
@@ -21,7 +21,7 @@ Follow these steps to set up the project locally:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/knight7080/fyle-health-challenge-tracker.git
+   git clone https://github.com/ishitaraina1807/Health-challenge-tracker
    ```
 2. **Navigate to the Project Directory:**
    ```bash
